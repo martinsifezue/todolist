@@ -1,0 +1,47 @@
+<%- include("partials/header") -%>
+
+  <div class="box" id="heading">
+<h1> <%= ListTitle %></h1>
+  </div>
+ 
+
+  <div class="box">
+    
+    
+      
+     <% listcontent.forEach(function(contents){ %>
+      <form action="/delete" method="post">
+
+        <div class="item">
+
+          <input type="checkbox" name="checkedboxid" onChange="this.form.submit()" value="<%= contents._id %>">
+           <p> <%= contents.name %> </p> 
+           
+        </div>
+<input type="hidden" name="deletecustomitem" value="<%= ListTitle %>">
+
+      </form>
+      
+     <% }) %>
+       
+      
+         
+
+    
+      
+
+  <form class="item" action="/" method="post">
+   
+    <input type="text"  placeholder="Add Item" name="newitem" autocomplete="off">
+    <button type="submit" name="lists" value="<%= ListTitle %>">+</button>
+  </form>
+
+
+
+  
+
+</div>
+      
+  
+
+<%- include("partials/footer") -%>
