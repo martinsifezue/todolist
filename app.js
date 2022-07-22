@@ -1,10 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const { application } = require("express");
-require("dotenv").config();
-const srvr = process.env.N1_KEY; 
-const srvrCred = process.env.N1_SECRET;
+
+
 const PORT = process.env.PORT || 3000;
 
 const today = require(__dirname + "/date.js");
@@ -19,7 +19,7 @@ app.use(express.static("public"));
 main().catch(err => console.log(err))
 
 async function main(){
- await mongoose.connect("mongodb+srv://"+ srvr + ":" + srvrCred + "@cluster0.xrqe7.mongodb.net/TDlist", {useNewUrlParser: true});
+ await mongoose.connect("mongodb+srv://"+ process.env.N1_KEY + ":" + process.env.N1_SECRET + "@cluster0.xrqe7.mongodb.net/TDlist", {useNewUrlParser: true});
 
 }
 
