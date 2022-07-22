@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const _ = require("lodash");
 const { application } = require("express");
+require("dotenv").config();
 const srvr = process.env.N1_KEY; 
 const srvrCred = process.env.N1_SECRET;
 const PORT = process.env.PORT || 3000;
